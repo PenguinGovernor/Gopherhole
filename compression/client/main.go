@@ -81,7 +81,7 @@ func verifyCompression(compression string) error {
 		return nil
 	case "tar":
 		return nil
-	case "huffman":
+	case "gz":
 		return nil
 	}
 	return fmt.Errorf("unknown compression type: %s", compression)

@@ -6,6 +6,7 @@ import (
 	"archive/tar"
 	"archive/zip"
 	"bytes"
+	"compress/gzip"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -91,6 +92,11 @@ func compressData(uncomprsesed *GopherHoleProtocol.Data) (*GopherHoleProtocol.Da
 			return nil, err
 		}
 		return compressedData, nil
+	case "gz":
+		if err := gzipUp(uncomprsesed, compressedData); err != nil {
+			return nil, err
+		}
+		return compressedData, nil
 
 	}
 
@@ -154,6 +160,26 @@ func tarUp(uncomprsesed, compressed *GopherHoleProtocol.Data) error {
 	}
 
 	// Write the contents of the buffer to the compmressed Data Structure.
+	compressed.Payload = buf.Bytes()
+
+	return nil
+}
+
+func gzipUp(uncomprsesed, compressed *GopherHoleProtocol.Data) error {
+	buf := new(bytes.Buffer)
+	// Create a zip archive
+	w := gzip.NewWriter(buf)
+
+	// Write the uncompressed bytes to the file.
+	if _, err := w.Write(uncomprsesed.Payload); err != nil {
+		return err
+	}
+
+	// Close the zip archive
+	if err := w.Close(); err != nil {
+		return err
+	}
+
 	compressed.Payload = buf.Bytes()
 
 	return nil
