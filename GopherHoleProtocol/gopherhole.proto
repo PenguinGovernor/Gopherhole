@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package GopherHoleProtocol;
+
+message Data {
+	bool isCompressed = 1;
+	string fileName = 2;
+	string compressionType = 3;
+	bytes payload = 4;
+}
