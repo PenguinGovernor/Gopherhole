@@ -11,7 +11,6 @@ import (
 	"strings"
 
 	"github.com/golang/protobuf/proto"
-
 	"github.com/penguingovernor/gopherhole/GopherHoleProtocol"
 )
 
