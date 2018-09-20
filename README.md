@@ -35,7 +35,7 @@ gopherhole $INPUTFILE $COMPRESSIONTYPE
 
 Example:
 ```shell
-echo "Hello, world!" > input.txt # Creates input.txt
+echo "Hello, world\!" > input.txt # Creates input.txt
 gopherhole input.txt zip # Creates input.zip
 ```
 
