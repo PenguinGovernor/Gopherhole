@@ -1,4 +1,4 @@
-// Package main is a cli server tool that handles protocol
+// Package scompress is a cli server tool that handles protocol
 // buffers and compresses the data, then to reencode them
 package main
 
