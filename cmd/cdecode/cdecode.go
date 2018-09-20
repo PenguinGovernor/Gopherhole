@@ -1,3 +1,5 @@
+// cdecode is a client cli decoding tool. It takes a protocol
+// buffer and decodes it into a properly formatted compressed format.
 package main
 
 import (

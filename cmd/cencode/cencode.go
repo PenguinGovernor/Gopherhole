@@ -1,4 +1,4 @@
-// Package cencode is the client CLI compression-request tool to
+// cencode is the client CLI compression-request tool to
 // generate a protocol buffer for the server-side compression tool.
 package main
 
