@@ -44,10 +44,7 @@ func writeData(data *GopherHoleProtocol.Data) error {
 		return err
 	}
 	// Write marshalled data to file, and report any errors
-	if err := ioutil.WriteFile(outputName, outData, 0644); err != nil {
-		return err
-	}
-	return nil
+	return ioutil.WriteFile(outputName, outData, 0644)
 }
 
 func encode(path, compression string) (*GopherHoleProtocol.Data, error) {

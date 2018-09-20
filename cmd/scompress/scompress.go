@@ -50,10 +50,7 @@ func writeData(data *GopherHoleProtocol.Data) error {
 	}
 	// Write the data to the file
 	fileName := strings.TrimSuffix(data.FileName, filepath.Ext(data.FileName)) + ".compressed.pb"
-	if err := ioutil.WriteFile(fileName, bb, 0644); err != nil {
-		return err
-	}
-	return nil
+	return ioutil.WriteFile(fileName, bb, 0644)
 }
 
 func getUncompressedData(path string) (*GopherHoleProtocol.Data, error) {
