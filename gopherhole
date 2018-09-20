@@ -6,6 +6,6 @@ filename=$(basename -- "$(realpath $1)")
 extension="${filename##*.}"
 filename="${filename%.*}"
 
-./client-encode --input $1 --type $TYPE
-./server-compress --input $filename.pb
-./client-decode --input $filename.compressed.pb
+cencode --input $1 --type $TYPE
+scompress --input $filename.pb
+cdecode --input $filename.compressed.pb
