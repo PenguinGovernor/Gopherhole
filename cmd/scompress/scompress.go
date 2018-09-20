@@ -24,7 +24,7 @@ func main() {
 	inputPath := flag.String("input", "", "Input file")
 	flag.Parse()
 	if *inputPath == "" {
-		log.Fatalln("missing input arguement")
+		log.Fatalln("missing input argument")
 	}
 	// Get the uncomprsesed data and report any errors.
 	uncompressedData, err := getUncompressedData(*inputPath)
