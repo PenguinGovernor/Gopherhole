@@ -1,4 +1,6 @@
-# Gopherhole
+# Gopherhole # 
+[![Go Report Card](https://goreportcard.com/badge/github.com/PenguinGovernor/Gopherhole)](https://goreportcard.com/report/github.com/PenguinGovernor/Gopherhole)
+
 Gopherhole is a set of cli tools that encodes data in order to compress it. Its primary form of communication
 between tools is Google's protocol buffers. This project is meant only as a learning excercise.
 
